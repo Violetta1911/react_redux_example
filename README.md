@@ -14,7 +14,7 @@ A simple comments application built with React, Redux, and Material UI. This app
 
 ## Demo
 
-You can view a live demo of the application at [your-live-demo-link-here](#).
+You can view a live demo of the application at [https://react-redux-example-sv.vercel.app](#).
 
 ## Features
 
@@ -46,10 +46,8 @@ To get a local copy up and running, follow these steps:
 2. **Install dependencies**
    npm install
 
-3. **Install dependencies**
-   npm install
-4. **Create .env.local file as .env.example**
+3.  **Create .env.local file as .env.example**
    REACT_APP_API_URL=https://dummyjson.com/comments
 
-5. **Run the application**
+4. **Run the application**
    npm start
