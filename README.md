@@ -14,7 +14,7 @@ A simple comments application built with React, Redux, and Material UI. This app
 
 ## Demo
 
-You can view a live demo of the application at [https://react-redux-example-sv.vercel.app](#).
+You can view a live demo of the application at [app](https://react-redux-example-sv.vercel.app).
 
 ## Features
 
