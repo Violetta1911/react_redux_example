@@ -20,16 +20,19 @@ export const CommentsList = ({ comments }: CommentsListProps) => {
 
     return (
         <ul className="comments-list">
-            {comments.map((comment: IComment) => (
-                <Comment
-                    key={comment.id}
-                    content={comment.body}
-                    author={comment?.user?.fullName || comment.user.username}
-                    likes={comment.likes}
-                    onDelete={() => handleRemoveComment(comment.id as number)}
-                    onLike={() => handleLikeComment(comment.id as number)}
-                />
-            ))}
+            {comments.map((comment: IComment) => {
+                const { id, body, user } = comment;
+                return (
+                    <Comment
+                        key={id}
+                        content={body}
+                        author={user?.username || (user?.fullName as string)}
+                        likes={comment.likes}
+                        onDelete={() => handleRemoveComment(id as number)}
+                        onLike={() => handleLikeComment(id as number)}
+                    />
+                );
+            })}
         </ul>
     );
 };
