@@ -1,12 +1,5 @@
 import { Button } from "@mui/material";
-
-type CommentProps = {
-    content: string;
-    author: string;
-    likes?: number;
-    onDelete: () => void;
-    onLike: () => void;
-};
+import { CommentProps } from "./types";
 
 export const Comment = ({
     content,

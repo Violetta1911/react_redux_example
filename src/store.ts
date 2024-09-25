@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import commentsReducer from "./commentsSlice";
+import commentsReducer from "./slices/commentsSlice";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { combineReducers } from "redux";

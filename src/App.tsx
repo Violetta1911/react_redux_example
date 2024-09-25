@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "./hooks";
-import { fetchComments, addComment } from "./commentsSlice";
+import { fetchComments, addComment } from "./slices/commentsSlice";
 import { CommentsList } from "./components/CommentsList";
 import { Button, Grid2, TextField } from "@mui/material";
 

@@ -1,7 +1,7 @@
 import commentsReducer, { addComment, removeComment, fetchComments } from ".";
 import { configureStore } from "@reduxjs/toolkit";
 import axios from "axios";
-import { ICommentsState } from "../types";
+import { ICommentsState } from "../../types";
 
 // Mock axios
 jest.mock("axios");

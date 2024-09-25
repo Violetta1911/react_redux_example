@@ -1,7 +1,7 @@
-import { IComment } from "../types";
 import { Comment } from "./Comment";
-import { useAppDispatch } from "../hooks";
-import { removeComment, addLike } from "../commentsSlice";
+import { useAppDispatch } from "../../hooks";
+import { removeComment, addLike } from "../../slices/commentsSlice";
+import { IComment } from "../../types";
 import "./styles.css";
 
 type CommentsListProps = {
