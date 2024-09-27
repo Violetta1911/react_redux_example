@@ -1,3 +1,4 @@
+// commentsSlice.ts
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import { IComment, ICommentsState } from "../../types";
@@ -21,27 +22,6 @@ export const fetchComments = createAsyncThunk<
         );
         return response.data.comments as IComment[];
     } catch (error) {
-        // Type assertion to handle unknown error
-        if (axios.isAxiosError(error) && error.message) {
-            return rejectWithValue(error.message);
-        } else if (error instanceof Error) {
-            return rejectWithValue(error.message);
-        } else {
-            return rejectWithValue("An unknown error occurred");
-        }
-    }
-});
-export const deleteComment = createAsyncThunk<
-    number, // Return type of the thunk
-    number, // Argument type for the thunk
-    { rejectValue: string }
->("comments/deleteComment", async (commentId, { rejectWithValue }) => {
-    try {
-        await axios.delete(
-            `${process.env.REACT_APP_COMMENTS_API_URL as string}/${commentId}`,
-        );
-        return commentId; // Return the id of the deleted comment
-    } catch (error) {
         if (axios.isAxiosError(error) && error.message) {
             return rejectWithValue(error.message);
         } else if (error instanceof Error) {
@@ -52,28 +32,7 @@ export const deleteComment = createAsyncThunk<
     }
 });
 
-// Update comment in the API
-export const updateComment = createAsyncThunk<
-    IComment,
-    { id: number; data: Partial<IComment> },
-    { rejectValue: string }
->("comments/updateComment", async ({ id, data }, { rejectWithValue }) => {
-    try {
-        const response = await axios.patch(
-            `${process.env.REACT_APP_COMMENTS_API_URL as string}/${id}`,
-            data,
-        );
-        return response.data; // Return the updated comment
-    } catch (error) {
-        if (axios.isAxiosError(error) && error.message) {
-            return rejectWithValue(error.message);
-        } else if (error instanceof Error) {
-            return rejectWithValue(error.message);
-        } else {
-            return rejectWithValue("An unknown error occurred");
-        }
-    }
-});
+// ... other async thunks like deleteComment and updateComment
 
 const commentsSlice = createSlice({
     name: "comments",
@@ -113,6 +72,7 @@ const commentsSlice = createSlice({
                 state.status = "failed";
                 state.error = action.payload as string; // Capture the error message
             });
+        // Handle other async thunks similarly
     },
 });
 
