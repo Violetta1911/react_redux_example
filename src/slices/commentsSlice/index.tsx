@@ -1,4 +1,3 @@
-// commentsSlice.ts
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import { IComment, ICommentsState } from "../../types";
@@ -31,8 +30,6 @@ export const fetchComments = createAsyncThunk<
         }
     }
 });
-
-// ... other async thunks like deleteComment and updateComment
 
 const commentsSlice = createSlice({
     name: "comments",
@@ -72,7 +69,6 @@ const commentsSlice = createSlice({
                 state.status = "failed";
                 state.error = action.payload as string; // Capture the error message
             });
-        // Handle other async thunks similarly
     },
 });
 

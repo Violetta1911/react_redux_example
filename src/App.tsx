@@ -73,7 +73,7 @@ const App: React.FC = () => {
                 onClick={refreshData}
                 style={{ marginBlock: "20px" }}
             >
-                Clear comments cash
+                Clear comments cache
             </Button>
             <Grid2 container spacing={2} wrap="wrap">
                 <Grid2 size={"grow"}>
